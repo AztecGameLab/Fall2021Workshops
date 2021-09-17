@@ -49046,7 +49046,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9630681, y: 1}
+    m_SensorSize: {x: 2.4525547, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -50193,8 +50193,8 @@ MonoBehaviour:
   Music: {fileID: 1591863924}
   Background: {fileID: 1249538320}
   PlayerOneShotAudio: {fileID: 1671528644}
-  playerJump: {fileID: 0}
-  playerLand: {fileID: 0}
+  playerJump: {fileID: 8300000, guid: d392e928d4d8475439c0c6a8f4a0cbf4, type: 3}
+  playerLand: {fileID: 8300000, guid: 85b5f52ec16542e4fb6286e5dd5a8083, type: 3}
 --- !u!4 &1578369367
 Transform:
   m_ObjectHideFlags: 0
