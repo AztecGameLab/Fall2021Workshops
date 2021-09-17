@@ -56,7 +56,10 @@ public class DogMovement : MonoBehaviour
 			{
 				m_Grounded = true;
 				if (!wasGrounded)
+				{
 					OnLandEvent.Invoke();
+					SoundManager.Instance.PlayPlayerLandSound();
+				}
 			}
 		}
 	}
@@ -130,6 +133,7 @@ public class DogMovement : MonoBehaviour
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			SoundManager.Instance.PlayPlayerJumpSound();
 		}
 	}
 
