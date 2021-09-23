@@ -15357,6 +15357,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193310096}
   m_CullTransparentMesh: 1
+--- !u!1 &200727960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1896875430548256576, guid: f88678372c73ab04786133feeb25978c, type: 3}
+  m_PrefabInstance: {fileID: 1896875430573447270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &200727961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200727960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3338abbb1fa03b0498cf13bf33844820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lassoPrefab: {fileID: 507512145598429135, guid: dfa78e00a848f7246bb9041d4fd28176, type: 3}
+  lassoHandle: {fileID: 42053415}
+  throwerRb: {fileID: 200727965}
+  throwForce: 100
+--- !u!50 &200727965 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1896875430548256591, guid: f88678372c73ab04786133feeb25978c, type: 3}
+  m_PrefabInstance: {fileID: 1896875430573447270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &276886917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49046,7 +49072,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.4525547, y: 1}
+    m_SensorSize: {x: 1.9178082, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -55213,25 +55239,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1064245023, guid: f88678372c73ab04786133feeb25978c, type: 3}
-      propertyPath: m_TagString
-      value: dog
-      objectReference: {fileID: 0}
-    - target: {fileID: 2118612349, guid: f88678372c73ab04786133feeb25978c, type: 3}
-      propertyPath: m_TagString
-      value: dog
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896875429508914903, guid: f88678372c73ab04786133feeb25978c, type: 3}
-      propertyPath: m_TagString
-      value: dog
-      objectReference: {fileID: 0}
     - target: {fileID: 1896875430548256576, guid: f88678372c73ab04786133feeb25978c, type: 3}
       propertyPath: m_Name
       value: PlayerDog?
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896875430548256576, guid: f88678372c73ab04786133feeb25978c, type: 3}
-      propertyPath: m_TagString
-      value: dog
       objectReference: {fileID: 0}
     - target: {fileID: 1896875430548256577, guid: f88678372c73ab04786133feeb25978c, type: 3}
       propertyPath: m_RootOrder
@@ -55276,10 +55286,6 @@ PrefabInstance:
     - target: {fileID: 1896875430548256577, guid: f88678372c73ab04786133feeb25978c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896875430780354673, guid: f88678372c73ab04786133feeb25978c, type: 3}
-      propertyPath: m_TagString
-      value: dog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f88678372c73ab04786133feeb25978c, type: 3}
