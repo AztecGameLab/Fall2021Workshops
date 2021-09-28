@@ -23,7 +23,8 @@ public class Lasso : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        playerRb.AddForce((playerRb.position - lassoRb.position)*pullForce);
+        playerRb.AddForce((lassoRb.position - playerRb.position)*pullForce);
+        print(collision.collider.gameObject.name);
         Destroy(gameObject);
     }
 }

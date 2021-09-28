@@ -15377,7 +15377,7 @@ MonoBehaviour:
   lassoPrefab: {fileID: 507512145598429135, guid: dfa78e00a848f7246bb9041d4fd28176, type: 3}
   lassoHandle: {fileID: 42053415}
   throwerRb: {fileID: 200727965}
-  throwForce: 100
+  throwForce: 50
 --- !u!50 &200727965 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1896875430548256591, guid: f88678372c73ab04786133feeb25978c, type: 3}
@@ -55285,6 +55285,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1896875430548256577, guid: f88678372c73ab04786133feeb25978c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563633910395909260, guid: f88678372c73ab04786133feeb25978c, type: 3}
+      propertyPath: m_AirControl
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
