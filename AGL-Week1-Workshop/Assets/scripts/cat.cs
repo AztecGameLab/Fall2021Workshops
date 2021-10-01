@@ -5,6 +5,8 @@ using UnityEngine;
 public class cat : MonoBehaviour
 {
     public Rigidbody2D catBody;
+    bool movingRight = true;
+    public float moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,15 @@ public class cat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        catBody.velocity = new Vector3(1, 0, 0);
+        catBody.velocity = new Vector3(moveSpeed, 0, 0);
+        if (movingRight == true)
+        {
+            catBody.velocity = new Vector3(moveSpeed, 0, 0);
+        }
+        else
+        {
+            catBody.velocity = new Vector3(-moveSpeed, 0, 0);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -23,6 +33,11 @@ public class cat : MonoBehaviour
             print("Contact");
             gameManager.instance.collectCat();
             Destroy(gameObject);
+
+        }
+        else
+        {
+            movingRight = !movingRight;
 
         }
 
