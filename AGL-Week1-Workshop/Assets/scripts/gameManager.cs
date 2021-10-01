@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
@@ -25,6 +25,7 @@ public class gameManager : MonoBehaviour
         if(catCount == 0)
         {
             print("Game over");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
   lassoRb: {fileID: 507512145598429133}
-  pullForce: 50
+  pullForce: 25
 --- !u!1 &507512145625458740
 GameObject:
   m_ObjectHideFlags: 0

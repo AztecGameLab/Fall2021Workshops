@@ -29,6 +29,8 @@ public class ThrowLasso : MonoBehaviour
         lassoInstance.GetComponent<Lasso>().playerRb = throwerRb;
         Vector3 mousePos=mainCam.ScreenToWorldPoint(Input.mousePosition-new Vector3(0,0,10));
         Vector2 forceDir = (Vector2)mousePos;
-        lassoInstance.GetComponent<Rigidbody2D>().AddForce((forceDir-throwerRb.position)*throwForce, ForceMode2D.Impulse);
+        lassoInstance.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        lassoInstance.GetComponent<Rigidbody2D>().AddForce((forceDir-throwerRb.position).normalized*throwForce, ForceMode2D.Impulse);
+        SoundManager.Instance.PlayPlayerWhip();
     }
 }

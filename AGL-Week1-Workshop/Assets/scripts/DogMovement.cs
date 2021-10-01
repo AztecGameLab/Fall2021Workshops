@@ -55,10 +55,12 @@ public class DogMovement : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
+				//print("grounded");
 				if (!wasGrounded)
 				{
 					OnLandEvent.Invoke();
 					SoundManager.Instance.PlayPlayerLandSound();
+					//print("land");
 				}
 			}
 		}
@@ -112,7 +114,7 @@ public class DogMovement : MonoBehaviour
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
-			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+			m_Rigidbody2D.AddForce(new Vector2(move * 10f, 0), ForceMode2D.Force);
 
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
@@ -133,6 +135,7 @@ public class DogMovement : MonoBehaviour
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			print("jump");
 			SoundManager.Instance.PlayPlayerJumpSound();
 		}
 	}

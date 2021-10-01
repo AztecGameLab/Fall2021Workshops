@@ -6,9 +6,9 @@ public class SoundManager : MonoBehaviour
 {
     public AudioSource Music;
     public AudioSource Background;
-    public AudioSource PlayerOneShotAudio;
-    public AudioClip playerJump;
-    public AudioClip playerLand;
+    public AudioSource PlayerJump;
+    public AudioSource PlayerLand;
+    public AudioSource PlayerWhip;
 
     private static SoundManager _instance;
 
@@ -28,11 +28,15 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayPlayerJumpSound()
     {
-        PlayerOneShotAudio.PlayOneShot(playerJump);
+        PlayerJump.Play();
     }
     public void PlayPlayerLandSound()
     {
-        PlayerOneShotAudio.PlayOneShot(playerLand);
+        PlayerLand.Play();
+    }
+    public void PlayPlayerWhip()
+    {
+        PlayerWhip.Play();
     }
 
 }
