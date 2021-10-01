@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource PlayerJump;
     public AudioSource PlayerLand;
     public AudioSource PlayerWhip;
-
+    public AudioSource CatGrab;
     private static SoundManager _instance;
 
     public static SoundManager Instance { get { return _instance; } }
@@ -28,15 +28,21 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayPlayerJumpSound()
     {
-        PlayerJump.Play();
+        if (!PlayerJump.isPlaying)
+            PlayerJump.Play();
     }
     public void PlayPlayerLandSound()
     {
-        PlayerLand.Play();
+        if (!PlayerLand.isPlaying)
+            PlayerLand.Play();
     }
     public void PlayPlayerWhip()
     {
         PlayerWhip.Play();
+    }
+    public void PlayCatGrab()
+    {
+        CatGrab.Play();
     }
 
 }

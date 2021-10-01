@@ -21,6 +21,7 @@ public class gameManager : MonoBehaviour
 
     public void collectCat()
     {
+        print("collect cat");
         catCount--;
         if(catCount == 0)
         {
