@@ -7,6 +7,7 @@ public class cat : MonoBehaviour
     public Rigidbody2D catBody;
     bool movingRight = true;
     public float moveSpeed;
+    bool collected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +30,12 @@ public class cat : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("dog")) {
+        if (collision.collider.CompareTag("dog")&&!collected) {
+            
             print("Contact");
             gameManager.instance.collectCat();
             Destroy(gameObject);
-
+            collected = true;
         }
         else
         {

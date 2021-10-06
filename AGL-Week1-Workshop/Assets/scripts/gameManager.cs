@@ -11,6 +11,10 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        if (catCount < 0)
+        {
+            catCount = FindObjectsOfType<cat>().Length;
+        }
     }
 
     // Update is called once per frame
