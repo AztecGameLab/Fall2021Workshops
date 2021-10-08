@@ -34,6 +34,7 @@ public class cat : MonoBehaviour
             
             print("Contact");
             gameManager.instance.collectCat();
+            SoundManager.Instance.PlayCatGrab();
             Destroy(gameObject);
             collected = true;
         }

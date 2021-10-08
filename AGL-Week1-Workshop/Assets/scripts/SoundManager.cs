@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource PlayerLand;
     public AudioSource PlayerWhip;
     public AudioSource CatGrab;
+    public AudioSource PlayerStep;
     private static SoundManager _instance;
 
     public static SoundManager Instance { get { return _instance; } }
@@ -35,6 +36,11 @@ public class SoundManager : MonoBehaviour
     {
         if (!PlayerLand.isPlaying)
             PlayerLand.Play();
+    }
+    public void PlayPlayerStep()
+    {
+        if (!PlayerStep.isPlaying)
+            PlayerStep.Play();
     }
     public void PlayPlayerWhip()
     {

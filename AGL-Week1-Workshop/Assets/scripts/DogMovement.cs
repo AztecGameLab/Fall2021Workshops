@@ -78,9 +78,12 @@ public class DogMovement : MonoBehaviour
 				crouch = true;
 			}
 		}
-
+		if (m_Grounded && move != 0)
+        {
+			SoundManager.Instance.PlayPlayerStep();
+        }
 		//only control the player if grounded or airControl is turned on
-		if (m_Grounded || m_AirControl)
+			if (m_Grounded || m_AirControl)
 		{
 
 			// If crouching
