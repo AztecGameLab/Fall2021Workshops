@@ -11,7 +11,7 @@ public class cat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("Hello world");
+        //print("Hello world");
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class cat : MonoBehaviour
     {
         if (collision.collider.CompareTag("dog")&&!collected) {
             
-            print("Contact");
+            //print("Contact");
             gameManager.instance.collectCat();
             SoundManager.Instance.PlayCatGrab();
             Destroy(gameObject);
