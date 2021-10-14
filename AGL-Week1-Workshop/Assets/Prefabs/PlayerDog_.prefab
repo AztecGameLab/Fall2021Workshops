@@ -238,7 +238,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.24}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -249,7 +249,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.3}
+  m_Size: {x: 1, y: 0.87}
   m_EdgeRadius: 0
 --- !u!114 &8563633910395909260
 MonoBehaviour:
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_JumpForce: 400
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1
@@ -274,6 +274,8 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 2118612350}
   m_CrouchDisableCollider: {fileID: 0}
   airControlCap: 0
+  walkingLag: 0.02
+  walking: {fileID: 5094428053639926248}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -319,7 +321,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1896875430548256576}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e3c0c9532145d3b4995c7787dd8682bd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
