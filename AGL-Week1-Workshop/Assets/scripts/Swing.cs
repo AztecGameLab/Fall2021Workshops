@@ -15,6 +15,7 @@ public class Swing : MonoBehaviour
     public LayerMask swingable;
     public float swingSpeed;
     public bool swingingRight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +68,7 @@ public class Swing : MonoBehaviour
         lr.SetPosition(1, swingCenter);
         lr.enabled = true;
         swinging = true;
-        swingSpeed = throwerRb.velocity.magnitude;
+        //swingSpeed = throwerRb.velocity.magnitude;
         throwerRb.gravityScale = 0;
         swingingRight = swingCenter.x > transform.position.x;
         
