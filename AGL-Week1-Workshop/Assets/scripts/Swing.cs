@@ -13,6 +13,8 @@ public class Swing : MonoBehaviour
     public Vector2 swingCenter;
     public LineRenderer lr;
     public LayerMask swingable;
+    public float swingSpeed;
+    public bool swingingRight;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class Swing : MonoBehaviour
         {
             lr.SetPosition(0, throwerRb.position);
             lr.SetPosition(1, swingCenter);
+            
             return;
         }        
         Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition - new Vector3(0, 0, 10));
@@ -47,17 +50,34 @@ public class Swing : MonoBehaviour
         }
 
     }
+    private void FixedUpdate()
+    {
+        if (swinging)
+        {
+            transform.up = (swingCenter - (Vector2)transform.position).normalized;
+            if(swingingRight)
+                throwerRb.velocity = transform.right*swingSpeed;
+            else
+                throwerRb.velocity = -transform.right * swingSpeed;
+        }
+    }
     public void StartSwing()
     {
         lr.SetPosition(0, throwerRb.position);
         lr.SetPosition(1, swingCenter);
         lr.enabled = true;
         swinging = true;
+        swingSpeed = throwerRb.velocity.magnitude;
+        throwerRb.gravityScale = 0;
+        swingingRight = swingCenter.x > transform.position.x;
+        
     }
     public void StopSwing()
     {
         swinging = false;
         lr.enabled = false;
+        transform.up = Vector3.up;
+        throwerRb.gravityScale = 1;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
