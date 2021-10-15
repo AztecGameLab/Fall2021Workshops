@@ -6,9 +6,11 @@ public class MoveBackground : MonoBehaviour {
 
 
 
-	public float speed;
+	public float distanceScaler;
+	public float actualSpeed;
 	private float x;
 	public float PontoDeDestino;
+	public float PontoDeDestinoLeft;
 	public float PontoOriginal;
 
 
@@ -23,19 +25,28 @@ public class MoveBackground : MonoBehaviour {
 	void Update () {
 
 
+		
+
+	}
+	public void tick()
+    {
 		x = transform.position.x;
-		x += speed * Time.deltaTime;
-		transform.position = new Vector3 (x, transform.position.y, transform.position.z);
+		x += actualSpeed * Time.deltaTime;
+		transform.position = new Vector3(x, transform.position.y, transform.position.z);
 
 
 
-		if (x <= PontoDeDestino){
+		if (x <= PontoDeDestino)
+		{
 
-			
+
 			x = PontoOriginal;
-			transform.position = new Vector3 (x, transform.position.y, transform.position.z);
+			transform.position = new Vector3(x, transform.position.y, transform.position.z);
 		}
-
-
+		else if (x >= PontoOriginal)
+		{
+			x = PontoDeDestino;
+			transform.position = new Vector3(x, transform.position.y, transform.position.z);
+		}
 	}
 }
