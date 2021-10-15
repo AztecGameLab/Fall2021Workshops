@@ -15,7 +15,7 @@ public class Swing : MonoBehaviour
     public LayerMask swingable;
     public float swingSpeed;
     public bool swingingRight;
-
+    public Transform indicator;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class Swing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonUp("Fire1"))
         {
             StopSwing();
             return;
@@ -40,11 +40,11 @@ public class Swing : MonoBehaviour
         Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition - new Vector3(0, 0, 10));
         Vector2 forceDir = (Vector2)mousePos;
         RaycastHit2D hit=Physics2D.Raycast(throwerRb.position, forceDir - throwerRb.position,1000,swingable);
-        print(hit.transform.gameObject.name);
+        
         if (hit == null)
             return;
-
-        if (Input.GetButtonDown("Fire2"))
+        indicator.position = new Vector3(hit.point.x, hit.point.y, indicator.position.z);
+        if (Input.GetButtonDown("Fire1"))
         {
             swingCenter = hit.point;
             StartSwing();
@@ -71,7 +71,7 @@ public class Swing : MonoBehaviour
         //swingSpeed = throwerRb.velocity.magnitude;
         throwerRb.gravityScale = 0;
         swingingRight = swingCenter.x > transform.position.x;
-        
+        SoundManager.Instance.PlayPlayerWhip();
     }
     public void StopSwing()
     {
