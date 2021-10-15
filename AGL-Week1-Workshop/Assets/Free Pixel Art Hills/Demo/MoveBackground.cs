@@ -20,20 +20,22 @@ public class MoveBackground : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	public void Move(float distance)
-    {
+	void Update () {
+
+
 		x = transform.position.x;
-		x -= speed * distance;
-		transform.position = new Vector3(x, transform.position.y, transform.position.z);
+		x += speed * Time.deltaTime;
+		transform.position = new Vector3 (x, transform.position.y, transform.position.z);
 
 
 
-		if (x <= PontoDeDestino)
-		{
+		if (x <= PontoDeDestino){
 
-
+			
 			x = PontoOriginal;
-			transform.position = new Vector3(x, transform.position.y, transform.position.z);
+			transform.position = new Vector3 (x, transform.position.y, transform.position.z);
 		}
+
+
 	}
 }

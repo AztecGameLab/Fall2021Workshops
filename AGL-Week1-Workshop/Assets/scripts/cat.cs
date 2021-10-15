@@ -18,7 +18,7 @@ public class cat : MonoBehaviour
     void Update()
     {
         catBody.velocity = new Vector3(moveSpeed, 0, 0);
-        if (movingRight == true)
+        if (movingRight)
         {
             catBody.velocity = new Vector3(moveSpeed, 0, 0);
         }
@@ -28,9 +28,9 @@ public class cat : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("dog")&&!collected) {
+        if (collision.CompareTag("dog")&&!collected) {
             
             //print("Contact");
             gameManager.instance.collectCat();
